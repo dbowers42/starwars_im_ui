@@ -1,0 +1,60 @@
+$online-color: #74f01b;
+$offline-color: #8d8889;
+$card-background-color: #305474;
+
+.users {
+
+  .user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 210px;
+    height: 50px;
+    color: gold;
+    font-family: Verdana, serif;
+    padding: 5px;
+    background: $card-background-color;
+
+    &.active {
+      background: lighten($card-background-color, 12%);
+    }
+
+    border: 1px solid #000000;
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+
+    .avater {
+      margin-right: 5px;
+    }
+    .content {
+      .screen-name {
+        font-size: 11pt;
+      }
+      .last-comment {
+        color: #999999;
+        font-size: .75em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100px;
+      }
+    }
+
+    .online, .offline {
+      position: relative;
+      top: -15px;
+      right: -200px;
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+    }
+
+    .online {
+      background-color: $online-color;
+    }
+
+    .offline {
+      background-color: $offline-color;
+    }
+  }
+}

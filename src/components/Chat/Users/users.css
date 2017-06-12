@@ -1,0 +1,38 @@
+.users .user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 210px;
+  height: 50px;
+  color: gold;
+  font-family: Verdana, serif;
+  padding: 5px;
+  background: #305474;
+  border: 1px solid #000000;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4); }
+  .users .user.active {
+    background: #42739f; }
+  .users .user .avater {
+    margin-right: 5px; }
+  .users .user .content .screen-name {
+    font-size: 11pt; }
+  .users .user .content .last-comment {
+    color: #999999;
+    font-size: .75em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100px; }
+  .users .user .online, .users .user .offline {
+    position: relative;
+    top: -15px;
+    right: -200px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%; }
+  .users .user .online {
+    background-color: #74f01b; }
+  .users .user .offline {
+    background-color: #8d8889; }
+
+/*# sourceMappingURL=users.css.map */
