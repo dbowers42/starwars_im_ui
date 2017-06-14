@@ -4,18 +4,26 @@ import './users.css'
 
 export default class Users extends React.Component {
     static propTypes = {
-        users: PropTypes.array.isRequired
+        users: PropTypes.array.isRequired,
+        currentUser: PropTypes.string
     }
 
     static defaultProps = {
         users: []
     }
+
+
+    userClass(user) {
+      return  user.screenName === this.props.currentUser ? 'user active' : 'user'
+    }
+
     render() {
+
         return (
             <div className="users">
                 {this.props.users.map((user) => {
                     return (
-                        <div key={user.key} className="user">
+                        <div key={user.screenName} className={this.userClass(user)}>
                             <div className={user.online ? "online" : "offline"} />
                             <div className="avatar">
                                 <img src={`/images/${user.avatar}`} alt={user.screenName} width="50" height="50" />

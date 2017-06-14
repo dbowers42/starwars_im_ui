@@ -9,7 +9,9 @@ import './chat.css'
 export default class Chat extends React.Component {
     static propTypes = {
         users: PropTypes.array.isRequired,
-        messages: PropTypes.array
+        messages: PropTypes.array,
+        currentUser: PropTypes.string,
+        sendMessage: PropTypes.func.isRequired
     }
 
     static defaultProps = {
@@ -18,12 +20,13 @@ export default class Chat extends React.Component {
     }
 
     render() {
+        console.log('chat current user', this.props.currentUser)
         return (
             <div className="chat">
-                <Users users={this.props.users} />
+                <Users users={this.props.users} currentUser={this.props.currentUser} />
                 <div className="conversation">
                     <Messages messages={this.props.messages}></Messages>
-                    <Messenger />
+                    <Messenger sendMessage={this.props.sendMessage} />
                 </div>
             </div>
         )
